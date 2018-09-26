@@ -15,9 +15,12 @@ var express     = require("express"),
 var commentRoutes   = require("./routes/comments"),
     campgroundRoutes= require("./routes/campgrounds"),
     indexRoutes     = require("./routes/index");
-    
-// mongoose.connect("mongodb://localhost:27017/yelpcamp", { useNewUrlParser: true});
-mongoose.connect("mongodb://phil:johnson1@ds113853.mlab.com:13853/yelpcamp9", { useNewUrlParser: true});
+
+
+//Local Database    
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true});
+//Live Heroku Database
+// mongoose.connect("mongodb://phil:johnson1@ds113853.mlab.com:13853/yelpcamp9", { useNewUrlParser: true});
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
