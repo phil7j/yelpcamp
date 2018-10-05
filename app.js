@@ -9,8 +9,8 @@ var express     = require("express"),
     Comment     = require("./models/comment"),
     methodOverride = require("method-override"),
     flash       = require("connect-flash"),
-    seedDB      = require("./seeds");
-
+    seedDB      = require("./seeds"),
+    PORT = process.env.PORT || 5000;
 //requiring routes    
 var commentRoutes   = require("./routes/comments"),
     campgroundRoutes= require("./routes/campgrounds"),
@@ -56,6 +56,6 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(PORT, process.env.IP, function(){
     console.log("YelpCamp Initiated!");
 });
