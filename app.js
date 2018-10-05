@@ -16,9 +16,10 @@ var commentRoutes   = require("./routes/comments"),
     campgroundRoutes= require("./routes/campgrounds"),
     indexRoutes     = require("./routes/index");
 
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelpcamp"
 
 //Local Database    
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true});
+mongoose.connect(url, { useNewUrlParser: true});
 //Live Heroku Database
 // mongoose.connect("mongodb://phil:johnson1@ds113853.mlab.com:13853/yelpcamp9", { useNewUrlParser: true});
 
