@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<h1 class="text-center">
+        <%= user.firstname + " " + user.lastname %>  
+        </h1>
+       
+<div class="row">
+       
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;"><img  class="card-img" src="<%= user.avatar %>" alt="user profile image"></div>  
+          <div class="caption">E-mail: <a href="<%= user.email %>"><%= user.email %></a></div>
+          <div class="mt-3">Camping is a little hobby of mine that not many of my fans are aware I enjoy. Little known fact: Frogs LOVE camping! Especially in wet and swampy places. Check out some of these campsites!</div>
+        </div>
+    <div class="col-md-8">
+        <h5 class="text-left mt-5 mb-4">My Campgrounds:</h5>
+            <div class="card-deck">
+<% campgrounds.forEach(function(campground) { %>
+    
+            
+                    <div class="card" style="max-width: 200px;">
+                            
+                            <img class="card-img-top" src="<%= campground.image %>>" alt="Card image cap">
+                            <div class="card-body">
+                                    <a href="/campgrounds/<%= campground.id %>"><h5 class="card-text text-center"><%= campground.name %></h5></a>
+                            </div>
+                        
+                          </div>
+
+            
+    
+<% }); %>
+</div>
+    </div>
+    
+</div>
+
+
+<% include ../partials/footer %>

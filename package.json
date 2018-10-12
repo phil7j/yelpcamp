@@ -1,7 +1,6 @@
 {
   "name": "yelpcamp",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,6 +21,18 @@
     "nodemon": "^1.18.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1"
-  }
+    "passport-local-mongoose": "^5.0.1",
+    "pryjs": "^1.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phil7j/yelpcamp.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/phil7j/yelpcamp/issues"
+  },
+  "homepage": "https://github.com/phil7j/yelpcamp#readme",
+  "description": ""
 }
