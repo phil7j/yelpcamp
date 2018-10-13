@@ -10,7 +10,6 @@ var express     = require("express"),
     Comment     = require("./models/comment"),
     methodOverride = require("method-override"),
     flash       = require("connect-flash"),
-    seedDB      = require("./seeds"),
     PORT = process.env.PORT || 5000;
 //requiring routes    
 var commentRoutes   = require("./routes/comments"),
@@ -29,8 +28,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-//Insert Seed Data
-// seedDB();
+
+//Momentjs
+app.locals.moment = require('moment');
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
